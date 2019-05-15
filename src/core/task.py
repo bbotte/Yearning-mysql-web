@@ -109,7 +109,7 @@ class order_push_message(threading.Thread):
         :return: none
 
         '''
-        time.sleep(self.order.delay * 60)
+        time.sleep(int(self.order.delay) * 60)
         try:
             detail = DatabaseList.objects.filter(id=self.order.bundle_id).first()
 
